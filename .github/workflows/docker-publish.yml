@@ -28,7 +28,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: testregisterysllm.azurecr.io/test-fastapi:0.0.2
+        tags: testregisterysllm.azurecr.io/test-fastapi:0.0.7
 
     - name: Log out from Azure Container Registry
       run: docker logout testregisterysllm.azurecr.io
