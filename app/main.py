@@ -2,7 +2,7 @@ import os
 
 from fastapi import FastAPI, HTTPException, Request
 
-from models import ItemPayload
+from app.models import ItemPayload
 
 app = FastAPI()
 
