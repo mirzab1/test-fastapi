@@ -1,10 +1,24 @@
 import os
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.models import ItemPayload
 
 app = FastAPI()
+origins = [
+    "https://nice-hill-0c8e1c110.4.azurestaticapps.net",
+    "http://localhost",
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 grocery_list: dict[int, ItemPayload] = {}
 
